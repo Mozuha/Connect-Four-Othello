@@ -9,8 +9,9 @@
 using System;
 
 namespace ConnectFourOthello {
-    public class EmptyDisc : Disc {
-        public override string Color => "empty";  // property returns "empty" as a value
-        public override char Symbol => '-';  // property returns "-" as a value
-    }
+  [Serializable]
+  public class EmptyDisc : Disc {
+    public override string Color => "empty";  // property returns "empty" as a value
+    public override char Symbol => '-';  // property returns "-" as a value
+  }
 }

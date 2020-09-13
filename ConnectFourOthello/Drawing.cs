@@ -9,14 +9,16 @@
 using System;
 
 namespace ConnectFourOthello {
-	public class Drawing {
+	[Serializable]
+  public class Drawing {
 		public void Print(Grid grid) {
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 4; j++) {
+			grid.GetGridSize(out int row, out int col);
+			for (int i = 0; i < row; i++) {
+				for (int j = 0; j < col; j++) {
 					Console.Write(grid[i, j].Symbol + " ");
-					if (j == 3) Console.WriteLine();
-                }
-            }
-        }
+					if (j == col - 1) Console.WriteLine();
+				}
+			}
+		}
 	}
 }

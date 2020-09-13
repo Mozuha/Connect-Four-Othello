@@ -8,8 +8,9 @@
 using System;
 
 namespace ConnectFourOthello {
-	public abstract class Disc {
-		public abstract string Color { get; }
-		public abstract char Symbol { get; }
-	}
+  [Serializable]
+  public abstract class Disc {
+    public abstract string Color { get; }
+    public abstract char Symbol { get; }
+  }
 }
