@@ -30,7 +30,7 @@ namespace ConnectFourOthello {
         do {
           Console.Write(
           "Welcome to Connect Four Othello! What would you like to do?\n" +
-          "1. Start new game\n" +
+          "1. Start a new game\n" +
           "2. Restore the previous state of the game\n" +
           "Enter your choice (1 or 2): "
           );
@@ -44,17 +44,17 @@ namespace ConnectFourOthello {
         
         if (choice == "1") {
           string setOrNot = ValidateYN(
-            "Would you like to set the number of grid row and column?\n" +
+            "Would you like to set the number of grid rows and columns?\n" +
             "If not, it will be set to 6 rows and 4 columns. (y/n): "
             );
 
           if (setOrNot == "y") {
             int row = 0, col = 0;
-            string loadOrNot = ValidateYN("Would you like to load the number of grid row and column from a file? (y/n): ");
+            string loadOrNot = ValidateYN("Would you like to load the number of grid rows and columns from a file? (y/n): ");
 
             if (loadOrNot == "y") {
               do {
-                Console.Write("Enter the CSV or XML file name that contains the number of grid row and column: ");
+                Console.Write("Enter the CSV or XML file name that contains the number of grid rows and columns: ");
                 string fileName = ValidateFileExistence(Console.ReadLine());
                 Console.WriteLine();
 
@@ -79,7 +79,7 @@ namespace ConnectFourOthello {
 
             else {
               do {
-                Console.Write("Enter the number of grid row and column (row col): ");
+                Console.Write("Enter the number of grid rows and columns (row col): ");
                 string input = Console.ReadLine();
                 Console.WriteLine();
                 row = ParseInput(input[0].ToString());
@@ -182,7 +182,7 @@ namespace ConnectFourOthello {
     // repeat the prompt until user inputs valid input
     private static bool ValidateLength(int row, int col) {
       if (row < 4 || col < 4) {
-        Console.WriteLine("It should be equal or greater than 4.\n");
+        Console.WriteLine("It should be equal to or greater than 4.\n");
         return false;
       }
       else return true;
@@ -283,7 +283,7 @@ namespace ConnectFourOthello {
       return input;
     }
 
-    // load csv file and get the number of grid row and column
+    // load csv file and get the number of grid rows and columns
     private static (int, int) LoadCSV(string fileName) {
       StreamReader reader = new StreamReader(fileName, Encoding.GetEncoding("UTF-8"));
       string[] infos = reader.ReadLine().Split(',');  // get numbers separated by comma
@@ -294,7 +294,7 @@ namespace ConnectFourOthello {
       return (row, col);
     }
 
-    // load xml file and get the number of grid row and column
+    // load xml file and get the number of grid rows and columns
     private static (int, int) LoadXML(string fileName) {
       XElement xml = XElement.Load(fileName);
       int row = ParseInput(xml.Element("Row").Value);
