@@ -1,9 +1,9 @@
 ﻿/*
- * Sep 3, 2020
+ * Sep 12, 2020
  * Mizuki Hashimoto
  * 
  * This is a class of grid. Its role is to apply changes to the grid with the values passed by main class,
- * and check the grid status.
+ * and check the grid status. It now holds the state of turn and result so it can be serialized.
  * This class work as a model class.
  */
 

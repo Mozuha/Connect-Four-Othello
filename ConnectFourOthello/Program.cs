@@ -1,9 +1,10 @@
 ﻿/*
- * Sep 3, 2020
+ * Sep 12, 2020
  * Mizuki Hashimoto
  * 
  * This is the main class. Its role is to conduct game flow; prompt message, receive input, 
  * validate input, send update details to grid class, receive the grid state, and print the result.
+ * It can receive input from CSV and XML file. It can also serialize/deserialize the game state to/from XML file.
  * This class work like a control class.
  */
 
